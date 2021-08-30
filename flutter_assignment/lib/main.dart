@@ -5,6 +5,7 @@ import 'package:flutter_assignment/Screens/bedRoomTop.dart';
 import 'package:flutter_assignment/Screens/homeTop.dart';
 import 'package:flutter_assignment/UI/ui.dart';
 import 'package:flutter_assignment/Widget/circles.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -137,6 +138,24 @@ class _MyHomePageState extends State<MyHomePage> {
             new BoxShadow(
               color: UIColors.whiteSmoke,
               blurRadius: 20.0,
+            ),
+          ],
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SvgPicture.asset(
+              "assets/images/bulb.svg",
+              fit: BoxFit.contain,
+            ),
+            SvgPicture.asset(
+              "assets/images/feather-home.svg",
+              fit: BoxFit.contain,
+            ),
+            SvgPicture.asset(
+              "assets/images/feather-settings.svg",
+              fit: BoxFit.contain,
             ),
           ],
         ),
