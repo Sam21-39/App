@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/UI/ui.dart';
 
 class HomeTop extends StatefulWidget {
   const HomeTop({Key key}) : super(key: key);
@@ -31,24 +32,42 @@ class _HomeTopState extends State<HomeTop> {
               ),
             ),
           ),
-          Align(
-            alignment: FractionalOffset(0.88, 0.1),
-            child: Container(
-              width: 80.0,
-              height: 80.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                  width: 3.0,
-                  color: Colors.white,
+          Stack(
+            children: [
+              Align(
+                alignment: FractionalOffset(0.88, 0.1),
+                child: Container(
+                  width: 60.0,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      width: 3.0,
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.circular(100.0),
+                  ),
+                  child: CircleAvatar(
+                    radius: 50.0,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100.0),
+                      child: Image.asset("assets/images/Sumit.jpg"),
+                    ),
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(100.0),
               ),
-              child: CircleAvatar(
-                radius: 70.0,
-                child: FlutterLogo(),
+              Align(
+                alignment: FractionalOffset(0.89, 0.1),
+                child: Container(
+                  width: 10.0,
+                  height: 10.0,
+                  decoration: BoxDecoration(
+                    color: UIColors.lightSalmon,
+                    borderRadius: BorderRadius.circular(100.0),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),

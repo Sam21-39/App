@@ -109,7 +109,98 @@ class _BedRoomContentState extends State<BedRoomContent> {
                 ),
               ),
             ],
-          )
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Text(
+            "Scences",
+            style: TextStyle(
+              color: UIColors.midNightBlue,
+              fontSize: 24.0,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 0.98,
+            ),
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 160.0,
+                height: 80.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  gradient: LinearGradient(
+                    begin: FractionalOffset(0.4, 0.2),
+                    end: FractionalOffset(1, 0.0),
+                    colors: [
+                      UIColors.lightSalmon,
+                      UIColors.sandyBrown.withOpacity(0.75),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: 160.0,
+                height: 80.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  gradient: LinearGradient(
+                    begin: FractionalOffset(0.4, 0.2),
+                    end: FractionalOffset(1, 0.0),
+                    colors: [
+                      UIColors.mediumPurple,
+                      UIColors.plum,
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 160.0,
+                height: 80.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  gradient: LinearGradient(
+                    begin: FractionalOffset(0.4, 0.2),
+                    end: FractionalOffset(1, 0.0),
+                    colors: [
+                      UIColors.skyBlue,
+                      UIColors.skyBlue.withOpacity(0.75),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: 160.0,
+                height: 80.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  gradient: LinearGradient(
+                    begin: FractionalOffset(0.4, 0.2),
+                    end: FractionalOffset(1, 0.0),
+                    colors: [
+                      UIColors.lightGreen,
+                      UIColors.lightGreen.withOpacity(0.5),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
         ],
       ),
     );

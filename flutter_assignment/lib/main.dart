@@ -80,16 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             // animated drawer
-            AnimatedContainer(
+            AnimatedAlign(
               curve: Curves.linear,
               duration: Duration(
                 milliseconds: 300,
               ),
-              alignment: posChange
-                  ? FractionalOffset(0, 1.9)
-                  : FractionalOffset(0, 1.4),
-              width: double.infinity,
-              height: double.infinity,
+              alignment:
+                  posChange ? FractionalOffset(0, 1.2) : FractionalOffset(0, 1),
               child: Container(
                 child: InkWell(
                   onTap: () => changePositionCallback(true),
@@ -99,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         : Container(),
                   ),
                 ),
-                height: MediaQuery.of(context).size.height * 0.72,
+                height: MediaQuery.of(context).size.height * 0.62,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: UIColors.secondary,
@@ -125,6 +122,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 key: bedRoomTopKey,
                 changePositionCallback: changePositionCallback,
                 position: posChange,
+              ),
+            ),
+            AnimatedOpacity(
+              opacity: posChange ? 1 : 0,
+              duration: Duration(milliseconds: 300),
+              child: Align(
+                alignment: FractionalOffset(0.9, 0.38),
+                child: Container(
+                  width: 40.0,
+                  height: 40.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0.1, 0.1),
+                          blurRadius: 10.0,
+                        )
+                      ]),
+                  child: SvgPicture.asset(
+                    "assets/images/awesome-power-off.svg",
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
               ),
             ),
           ],
