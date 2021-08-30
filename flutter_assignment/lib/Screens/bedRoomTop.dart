@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/Screens/bedRoomContent.dart';
 import 'package:flutter_assignment/UI/ui.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,7 +19,7 @@ class BedRoomTop extends StatefulWidget {
 
 class _BedRoomTopState extends State<BedRoomTop> {
   double opacity = 1.0;
-  Color color = UIColors.sandyBrown;
+  Color color = UIColors.gold;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,6 +71,21 @@ class _BedRoomTopState extends State<BedRoomTop> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 36.0,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.98,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: FractionalOffset(
+                      0,
+                      0.48,
+                    ),
+                    child: Text(
+                      "4 Lights",
+                      style: TextStyle(
+                        color: UIColors.gold,
+                        fontSize: 24.0,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 0.98,
                       ),

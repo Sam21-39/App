@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_assignment/Screens/bedRoomContent.dart';
 import 'package:flutter_assignment/Screens/bedRoomTop.dart';
+import 'package:flutter_assignment/Screens/homeContent.dart';
 import 'package:flutter_assignment/Screens/homeTop.dart';
 import 'package:flutter_assignment/UI/ui.dart';
 import 'package:flutter_assignment/Widget/circles.dart';
@@ -88,13 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment:
                   posChange ? FractionalOffset(0, 1.2) : FractionalOffset(0, 1),
               child: Container(
-                child: InkWell(
-                  onTap: () => changePositionCallback(true),
-                  child: SingleChildScrollView(
-                    child: posChange
-                        ? BedRoomContent(key: bedRoomKey)
-                        : Container(),
-                  ),
+                child: SingleChildScrollView(
+                  child: posChange
+                      ? BedRoomContent(key: bedRoomKey)
+                      : HomeContent(
+                          onChangeCallback: changePositionCallback,
+                        ),
                 ),
                 height: MediaQuery.of(context).size.height * 0.62,
                 width: double.infinity,

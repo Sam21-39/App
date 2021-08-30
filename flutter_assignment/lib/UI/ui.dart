@@ -14,4 +14,5 @@ class UIColors {
   static final Color mediumPurple = new Color(0xffa594eb);
   static final Color plum = new Color(0xffde94eb);
   static final Color whiteSmoke = new Color(0xffeff3f9);
+  static final Color gold = new Color(0xffffd139);
 }

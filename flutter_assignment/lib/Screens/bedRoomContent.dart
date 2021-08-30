@@ -40,7 +40,7 @@ class _BedRoomContentState extends State<BedRoomContent> {
               SvgPicture.asset("assets/images/solution2.svg"),
               Flexible(
                 child: Slider(
-                  activeColor: UIColors.sandyBrown,
+                  activeColor: UIColors.gold,
                   inactiveColor: UIColors.lightGray,
                   value: slideVal,
                   min: 0.35,
@@ -142,6 +142,24 @@ class _BedRoomContentState extends State<BedRoomContent> {
                     ],
                   ),
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/solution1.svg",
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Birthday",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.98,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 width: 160.0,
@@ -156,6 +174,24 @@ class _BedRoomContentState extends State<BedRoomContent> {
                       UIColors.plum,
                     ],
                   ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/solution1.svg",
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Party",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.98,
+                      ),
+                    )
+                  ],
                 ),
               ),
             ],
@@ -180,6 +216,24 @@ class _BedRoomContentState extends State<BedRoomContent> {
                     ],
                   ),
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/solution1.svg",
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Relax",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.98,
+                      ),
+                    )
+                  ],
+                ),
               ),
               Container(
                 width: 160.0,
@@ -194,6 +248,24 @@ class _BedRoomContentState extends State<BedRoomContent> {
                       UIColors.lightGreen.withOpacity(0.5),
                     ],
                   ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/solution1.svg",
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Fun",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.98,
+                      ),
+                    )
+                  ],
                 ),
               ),
             ],
