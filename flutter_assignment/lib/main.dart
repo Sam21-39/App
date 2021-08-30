@@ -35,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool posChange = false;
+  bool lightOn = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,23 +89,62 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               alignment:
                   posChange ? FractionalOffset(0, 1.2) : FractionalOffset(0, 1),
-              child: Container(
-                child: SingleChildScrollView(
-                  child: posChange
-                      ? BedRoomContent(key: bedRoomKey)
-                      : HomeContent(
-                          onChangeCallback: changePositionCallback,
-                        ),
-                ),
-                height: MediaQuery.of(context).size.height * 0.62,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: UIColors.secondary,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50.0),
-                    topRight: Radius.circular(50.0),
+              child: Stack(
+                alignment: FractionalOffset(0.85, -0.045),
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 32.0),
+                    child: SingleChildScrollView(
+                      child: posChange
+                          ? BedRoomContent(key: bedRoomKey)
+                          : HomeContent(
+                              onChangeCallback: changePositionCallback,
+                            ),
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.62,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: UIColors.secondary,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                      ),
+                    ),
                   ),
-                ),
+                  AnimatedOpacity(
+                    opacity: posChange ? 1 : 0,
+                    duration: Duration(milliseconds: 300),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          lightOn = !lightOn;
+                        });
+                        bedRoomTopKey.currentState.setState(() {
+                          bedRoomTopKey.currentState.opacity =
+                              lightOn ? 1 : 0.35;
+                        });
+                      },
+                      child: Container(
+                        width: 40.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100.0),
+                            color: Colors.white,
+                            boxShadow: [
+                              new BoxShadow(
+                                color: Colors.black12,
+                                offset: Offset(0.1, 0.1),
+                                blurRadius: 10.0,
+                              )
+                            ]),
+                        child: SvgPicture.asset(
+                          "assets/images/awesome-power-off.svg",
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
@@ -122,31 +162,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 key: bedRoomTopKey,
                 changePositionCallback: changePositionCallback,
                 position: posChange,
-              ),
-            ),
-            AnimatedOpacity(
-              opacity: posChange ? 1 : 0,
-              duration: Duration(milliseconds: 300),
-              child: Align(
-                alignment: FractionalOffset(0.9, 0.38),
-                child: Container(
-                  width: 40.0,
-                  height: 40.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100.0),
-                      color: Colors.white,
-                      boxShadow: [
-                        new BoxShadow(
-                          color: Colors.black12,
-                          offset: Offset(0.1, 0.1),
-                          blurRadius: 10.0,
-                        )
-                      ]),
-                  child: SvgPicture.asset(
-                    "assets/images/awesome-power-off.svg",
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
               ),
             ),
           ],

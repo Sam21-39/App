@@ -21,7 +21,6 @@ class _HomeContentState extends State<HomeContent> {
       padding: const EdgeInsets.all(16.0),
       child: Wrap(
         alignment: WrapAlignment.spaceAround,
-        spacing: 10.0,
         runSpacing: 20.0,
         children: contentMap.entries.map((e) {
           return InkWell(

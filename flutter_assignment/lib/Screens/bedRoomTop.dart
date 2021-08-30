@@ -55,7 +55,7 @@ class _BedRoomTopState extends State<BedRoomTop> {
                       "Bed",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 36.0,
+                        fontSize: 32.0,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 0.98,
                       ),
@@ -70,7 +70,7 @@ class _BedRoomTopState extends State<BedRoomTop> {
                       "Room",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 36.0,
+                        fontSize: 32.0,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 0.98,
                       ),
@@ -101,29 +101,27 @@ class _BedRoomTopState extends State<BedRoomTop> {
                 ? FractionalOffset(0.88, 0.0)
                 : FractionalOffset(0.88, -0.04),
             duration: Duration(milliseconds: 500),
-            child: SvgPicture.asset(
-              "assets/images/light_bulb.svg",
-              color: color.withOpacity(opacity),
-            ),
-          ),
-          AnimatedAlign(
-            curve: Curves.linear,
-            alignment: widget.position
-                ? FractionalOffset(0.765, 0.16)
-                : FractionalOffset(0.765, 0.1),
-            duration: Duration(milliseconds: 500),
-            child: Container(
-              width: 30.0,
-              height: 30.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100.0),
-                boxShadow: [
-                  new BoxShadow(
-                    color: color.withOpacity(opacity),
-                    blurRadius: 10.0,
+            child: Stack(
+              alignment: FractionalOffset(0.5, 0.88),
+              children: [
+                SvgPicture.asset(
+                  "assets/images/light_bulb.svg",
+                  color: color.withOpacity(opacity),
+                ),
+                Container(
+                  width: 30.0,
+                  height: 30.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100.0),
+                    boxShadow: [
+                      new BoxShadow(
+                        color: color.withOpacity(opacity),
+                        blurRadius: 15.0,
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           AnimatedAlign(
@@ -134,85 +132,6 @@ class _BedRoomTopState extends State<BedRoomTop> {
             duration: Duration(milliseconds: 500),
             child: SvgPicture.asset(
               "assets/images/light_holder.svg",
-            ),
-          ),
-          AnimatedAlign(
-            curve: Curves.linear,
-            alignment: widget.position
-                ? FractionalOffset(0.18, 0.28)
-                : FractionalOffset(0.5, 0.28),
-            duration: Duration(milliseconds: 400),
-            child: Container(
-              width: 150,
-              height: 60,
-              child: Card(
-                elevation: 2,
-                color: Colors.white,
-                shadowColor: UIColors.whiteSmoke,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset("assets/images/surface1.svg"),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        "Main Light",
-                        style: TextStyle(
-                          color: UIColors.midNightBlue,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.98,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          AnimatedAlign(
-            curve: Curves.linear,
-            alignment: widget.position
-                ? FractionalOffset(0.88, 0.28)
-                : FractionalOffset(1, 0.28),
-            duration: Duration(milliseconds: 400),
-            child: Container(
-              width: 150,
-              height: 60,
-              child: Card(
-                elevation: 2,
-                color: UIColors.midNightBlue,
-                shadowColor: UIColors.midNightBlue.withOpacity(0.25),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                          "assets/images/furniture-and-household.svg"),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        "Desk Light",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.98,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ),
           ),
         ],
