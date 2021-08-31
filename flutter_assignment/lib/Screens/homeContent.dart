@@ -19,65 +19,88 @@ class _HomeContentState extends State<HomeContent> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Wrap(
-        alignment: WrapAlignment.spaceAround,
-        runSpacing: 20.0,
-        children: contentMap.entries.map((e) {
-          return InkWell(
-            onTap: () {
-              widget.onChangeCallback(true);
-            },
-            child: Container(
-              height: 200,
-              width: 160,
-              padding: EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.0),
-                boxShadow: [
-                  new BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 10.0,
-                    offset: Offset(0.1, 0.1),
-                  ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SvgPicture.asset(imageMap[e.key]),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        e.key,
-                        style: TextStyle(
-                          color: UIColors.darkSlateGrey,
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.98,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 8.0,
-                      ),
-                      Text(
-                        e.value,
-                        style: TextStyle(
-                          color: UIColors.sandyBrown,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.98,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Text(
+              "All Rooms",
+              style: TextStyle(
+                color: UIColors.midNightBlue,
+                fontSize: 24.0,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 0.98,
               ),
             ),
-          );
-        }).toList(),
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Container(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              runSpacing: 20.0,
+              children: contentMap.entries.map((e) {
+                return InkWell(
+                  onTap: () {
+                    widget.onChangeCallback(true);
+                  },
+                  child: Container(
+                    height: 200,
+                    width: 160,
+                    padding: EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 10.0,
+                          offset: Offset(0.1, 0.1),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SvgPicture.asset(imageMap[e.key]),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              e.key,
+                              style: TextStyle(
+                                color: UIColors.darkSlateGrey,
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.98,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 8.0,
+                            ),
+                            Text(
+                              e.value,
+                              style: TextStyle(
+                                color: UIColors.sandyBrown,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 0.98,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }
